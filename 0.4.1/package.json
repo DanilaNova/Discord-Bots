@@ -1,0 +1,15 @@
+{
+  "name": "macrojs",
+  "version": "0.4.1",
+  "vtype": "dev",
+  "description": "Macro Bot for Discord",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Venin",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
+}

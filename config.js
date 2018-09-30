@@ -1,2 +1,4 @@
-var admin = "Venin"
-module.exports.admin = admin
+var config = {}
+config.admin = "Venin"
+config.token = null
+module.exports = config

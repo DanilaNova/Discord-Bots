@@ -14,12 +14,12 @@ if(process.argv.length > 2) {
     if(process.argv[2] == "autorun") {
         if(typeof config.admin != 'undefined') {
             admin = config.admin
-            client.login("NDkzNzcyMDk1MzIzMzczNTY4.DowEQQ.Bi04BRyOvJOs9V5f5DhXgvTABOo").then(console.info("Соединение установлено"))
+            client.login("token").then(console.info("Соединение установлено"))
             idleconnect(client)
         }
     } else if(process.argv.length > 3 && process.argv[3] == "autorun") {
         admin = process.argv[2]
-        client.login("NDkzNzcyMDk1MzIzMzczNTY4.DowEQQ.Bi04BRyOvJOs9V5f5DhXgvTABOo").then(console.info("Соединение установлено"))
+        client.login("token").then(console.info("Соединение установлено"))
         idleconnect(client)
     } else console.info("Текущий администратор - " + admin)
 } else if(typeof config.admin != 'undefined') {
@@ -47,7 +47,7 @@ rl.on('line', (input) => {
         }
     } else if(input=="connect") {
         if (admin != 0) {
-            client.login("NDkzNzcyMDk1MzIzMzczNTY4.DowEQQ.Bi04BRyOvJOs9V5f5DhXgvTABOo").then(console.info("Соединение установлено"))
+            client.login("token").then(console.info("Соединение установлено"))
         } else console.warn("Администратор не задан")
     } else if (input=="disconnect") {
         client.destroy().then(console.info("Соединение закрыто"))

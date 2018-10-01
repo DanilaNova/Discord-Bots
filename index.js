@@ -46,7 +46,7 @@ if(config.token == null) {
         token = answer
         console.info("Новый токен - ${token}")
     })
-}
+} else token = config.token
 rl.on('line', (input) => {
     if(input=="help") {
         console.info("admin - изменить или посмотреть администратора\nconnect - установить соединение\ndisconnect - закрыть соединение\nshutdown - выключить программу\nstatus - показать или изменить статус")

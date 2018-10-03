@@ -1,4 +1,4 @@
 var config = {}
 config.admin = "Venin"
-config.token = "NDkzNzcyMDk1MzIzMzczNTY4.DpKAQQ.ASQvlQGvRDU3yrmhUmMXZIhexrQ"
+config.token = "token"
 module.exports = config

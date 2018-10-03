@@ -1,4 +1,4 @@
 var config = {}
 config.admin = "Venin"
-config.token = "token"
+config.token = null
 module.exports = config

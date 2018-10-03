@@ -5,26 +5,7 @@ const config = require("./config.js")
 const json = require('./package.json')
 console.log("MacroJS by " + json.author)
 console.info("Version - " + json.version + ' (' + json.vtype + ')')
-function idleconnect(client) {
-    console.log("Автозапуск")
-    client.on('ready', function() {client.user.setStatus('idle')})
-    console.warn("Работа в автоматическом режиме")
-}
-if(process.argv.length > 2) {
-    if(process.argv[2] == "autorun") {
-        if(typeof config.admin != 'undefined') {
-            admin = config.admin
-            client.login(token).then(console.info("Соединение установлено"))
-            idleconnect(client)
-        }
-    } else if(process.argv.length > 3 && process.argv[3] == "autorun") {
-        admin = process.argv[2]
-        client.login(token).then(console.info("Соединение установлено"))
-        idleconnect(client)
-    } else console.info("Текущий администратор - " + admin)
-} else if(typeof config.admin != 'undefined') {
-    admin = config.admin
-} else admin = 0
+
 var date = new Date
 const startTime = date.getHours() + ":" + date.getMinutes()
 var workTime
@@ -47,6 +28,26 @@ if(config.token == null) {
         console.info("Новый токен - ${token}")
     })
 } else token = config.token
+function idleconnect(client) {
+    console.log("Автозапуск")
+    client.on('ready', function() {client.user.setStatus('idle')})
+    console.warn("Работа в автоматическом режиме")
+}
+if(process.argv.length > 2) {
+    if(process.argv[2] == "autorun") {
+        if(typeof config.admin != 'undefined') {
+            admin = config.admin
+            client.login(token).then(console.info("Соединение установлено"))
+            idleconnect(client)
+        }
+    } else if(process.argv.length > 3 && process.argv[3] == "autorun") {
+        admin = process.argv[2]
+        client.login(token).then(console.info("Соединение установлено"))
+        idleconnect(client)
+    } else console.info("Текущий администратор - " + admin)
+} else if(typeof config.admin != 'undefined') {
+    admin = config.admin
+} else admin = 0
 rl.on('line', (input) => {
     if(input=="help") {
         console.info("admin - изменить или посмотреть администратора\nconnect - установить соединение\ndisconnect - закрыть соединение\nshutdown - выключить программу\nstatus - показать или изменить статус")
